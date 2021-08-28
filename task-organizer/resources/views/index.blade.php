@@ -21,10 +21,23 @@
         </div>
         <div class="card-body">
             <div class="card-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, vitae molestiae. Veritatis cumque saepe illum ullam eius dignissimos hic inventore asperiores! 
-                <br>
-                <span class="badge rounded-pill bg-info text-dark">Todo</span>
-                <small>Last Updated : </small>
+
+                <div class="float-start">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, vitae molestiae. Veritatis cumque saepe illum ullam eius dignissimos hic inventore asperiores! 
+                    <br>
+                    <span class="badge rounded-pill bg-info text-dark">Todo</span>
+                    <small>Last Updated : </small>
+                </div>
+                <div class="float-end">
+                    <a href="{{ route('task.edit', 1) }}" class="btn btn-success">
+                        Edit
+                    </a>
+                    <a href="{{ route('task.edit', 1) }}" class="btn btn-danger">
+                        Delete
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+
             </div>
         </div>
     </div>
