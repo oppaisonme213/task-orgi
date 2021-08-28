@@ -13,7 +13,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        return view('index');
     }
 
     /**
@@ -23,7 +23,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return "create page";
     }
 
     /**

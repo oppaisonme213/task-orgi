@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Taskerino</title>
       {{-- Fonts --}}
 
       
@@ -28,14 +28,27 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="{{ route('task.create') }}">New Task</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+        </nav>
         {{-- body --}}
-       
+        <div class="container p-5">
+            <h4 class="pb-3">My Tasks</h4>
+
+            <div class="card">
+                <div class="card-header">
+                    First Task
+                </div>
+                <div class="card-body">
+                    <div class="card-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, vitae molestiae. Veritatis cumque saepe illum ullam eius dignissimos hic inventore asperiores! 
+                    </div>
+                </div>
+            </div>
+        </div>
 
       
     {{-- js --}}
