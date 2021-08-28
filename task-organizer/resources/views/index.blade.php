@@ -12,21 +12,27 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    
 
+    @foreach ($tasks as $task)
     <div class="card">
         <div class="card-header">
-            First Task
-            <span class="badge rounded-pill bg-warning text-dark">time</span>
+            {{ $task->title }}
+            <span class="badge rounded-pill bg-warning text-dark">
+                {{ $task->created_at->diffforhumans() }}
+            </span>
         </div>
         <div class="card-body">
             <div class="card-text">
 
                 <div class="float-start">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, vitae molestiae. Veritatis cumque saepe illum ullam eius dignissimos hic inventore asperiores! 
+                    {{ $task->description }} 
                     <br>
-                    <span class="badge rounded-pill bg-info text-dark">Todo</span>
-                    <small>Last Updated : </small>
+
+                    <span class="badge rounded-pill bg-info text-dark">
+                        Todo
+                    </span>
+                   
+                    <small>Last Updated : {{ $task->updated_at->diffforhumans() }}</small>
                 </div>
                 <div class="float-end">
                     <a href="{{ route('task.edit', 1) }}" class="btn btn-success">
@@ -41,4 +47,7 @@
             </div>
         </div>
     </div>
+    @endforeach
+
+
 @endsection

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Task;
 class TaskController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $tasks = Task::get();
+        return view('index', compact('tasks'));
     }
 
     /**
