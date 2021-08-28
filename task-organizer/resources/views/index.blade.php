@@ -14,7 +14,7 @@
     </div>
 
     @foreach ($tasks as $task)
-    <div class="card">
+    <div class="card mt-3">
         <h5 class="card-header">
 
             @if ($task->status === "Todo")
@@ -74,5 +74,16 @@
     </div>
     @endforeach
 
+    @if (count($tasks) === 0)
+    <div class="alert alert-danger p-2">
+        No Task Found. Please Create a new task!
+        <br>
+        <br>
+        <a href="{{ route('task.create') }}" class="btn btn-info btn-sm">
+            Add New Task
+        </a>
+    </div>
+
+    @endif
 
 @endsection
