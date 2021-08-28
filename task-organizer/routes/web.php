@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[TaskController::class, 'index'])->name('index');
+route::resource('task', TaskController::class);
