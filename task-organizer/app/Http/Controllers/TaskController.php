@@ -76,7 +76,18 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $task = Task::findorFail($id);
+        $statuses = [
+            [
+                'label' => 'Todo',
+                'value' => 'Todo',
+            ],
+            [
+                'label' => 'Done',
+                'value' => 'Done',
+            ]
+        ];
+        return view('edit', compact('statuses', 'task'));
     }
 
     /**
@@ -88,7 +99,16 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $task = Task::findorFail($id);
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->status = $request->status;
+        $task->save();
+        return redirect()->route('index');
     }
 
     /**
