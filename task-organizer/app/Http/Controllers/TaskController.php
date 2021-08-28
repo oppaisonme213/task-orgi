@@ -24,7 +24,17 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $statuses = [
+            [
+                'label' => 'Todo',
+                'value' => 'Todo',
+            ],
+            [
+                'label' => 'Done',
+                'value' => 'Done',
+            ]
+        ];
+        return view('create', compact('statuses'));
     }
 
     /**
@@ -35,7 +45,16 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        $task = new Task();
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->status = $request->status;
+        $task->save();
+        return redirect()->route('index');
     }
 
     /**

@@ -28,23 +28,31 @@
                     {{ $task->description }} 
                     <br>
 
-                    <span class="badge rounded-pill bg-info text-dark">
-                        Todo
-                    </span>
+                    @if ($task->status === "Todo")
+                        <span class="badge rounded-pill bg-info text-dark">
+                            Todo
+                        </span>
+                    @else
+                        <span class="badge rounded-pill bg-success text-white">
+                            Done
+                        </span>
+                    @endif
+
                    
                     <small>Last Updated : {{ $task->updated_at->diffforhumans() }}</small>
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('task.edit', 1) }}" class="btn btn-success">
+                    <a href="{{ route('task.edit', $task->id) }}" class="btn btn-success">
                         Edit
                     </a>
-                    <a href="{{ route('task.edit', 1) }}" class="btn btn-danger">
+                    <a href="{{ route('task.edit', $task->id) }}" class="btn btn-danger">
                         Delete
                     </a>
                 </div>
                 <div class="clearfix"></div>
 
             </div>
+            
         </div>
     </div>
     @endforeach
