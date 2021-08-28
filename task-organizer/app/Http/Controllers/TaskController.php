@@ -23,7 +23,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return "create page";
+        return view('create');
     }
 
     /**

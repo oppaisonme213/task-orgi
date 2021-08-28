@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('main-content')
-    <h4 class="pb-3">My Tasks</h4>
+    <h4 class="pb-3">Create New Tasks</h4>
 
     <div class="card">
         <div class="card-header">
