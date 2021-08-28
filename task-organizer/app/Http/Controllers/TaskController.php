@@ -119,6 +119,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Task::findorFail($id);
+        $task->delete();
+        return redirect()->route('index');
     }
 }
