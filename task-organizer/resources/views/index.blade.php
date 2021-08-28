@@ -7,7 +7,7 @@
         </div>
         <div class="float-end">
             <a href="{{ route('task.create') }}" class="btn btn-info">
-                Create Task
+                <i class="fa fa-plus-circle"></i>Create Task
             </a>
         </div>
         <div class="clearfix"></div>
@@ -56,13 +56,13 @@
                 </div>
                 <div class="float-end">
                     <a href="{{ route('task.edit', $task->id) }}" class="btn btn-success">
-                        Edit
+                        <i class="fa fa-edit"></i>
                     </a>
                     <form action="{{ route('task.destroy', $task->id) }}" style="display:inline" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">
-                            Delete
+                            <i class="fa fa-trash"></i>
                         </button>
                     </form>
                 </div>
@@ -80,7 +80,7 @@
         <br>
         <br>
         <a href="{{ route('task.create') }}" class="btn btn-info btn-sm">
-            Add New Task
+        <i class="fa fa-plus-circle"></i>Add New Task
         </a>
     </div>
 

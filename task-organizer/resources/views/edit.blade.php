@@ -7,7 +7,7 @@
         </div>
         <div class="float-end">
             <a href="{{ route('index') }}" class="btn btn-info">
-                All Task
+            <i class="fa fa-arrow-left"></i>All Task
             </a>
         </div>
         <div class="clearfix"></div>
@@ -33,7 +33,10 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="{{ route('index') }}" class="btn btn-secondary mr-2"><i class="fa fa-arrow-left"></i>Cancel</a>
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-check"></i>Save
+        </button>
     </form>
     </div>
  
